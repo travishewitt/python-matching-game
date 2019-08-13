@@ -89,6 +89,10 @@ def GetMove():
     print("Enter a move by specifying a space and direction. (u, d, l, r). Spaces should list column, then row.")
     print("For Example: e3u will swap position e3 with the piece above it. f7r would swap position f7 and the piece to the right of it.")
     move = input("Enter move: ")
+
+    while not IsValid(move):
+        move = input("That's not a valid move. Please try again!")
+
     return move
 
 def ConvertLetterToCol(Col):
